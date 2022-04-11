@@ -5,7 +5,12 @@ export default function XocDiaChanLe() {
   return (
     <div className="row text-center">
       <div className="col-3">
-        <h1>Chẵn</h1>
+        <button className='btn btn-dark' style={{
+          margin: 'auto',
+          margin: '50%'
+        }}>
+          <h1>Mở Bát</h1>
+        </button>
       </div>
       <div className="col-6">
         <div className='batDia'>
@@ -14,12 +19,17 @@ export default function XocDiaChanLe() {
           }} />
           <QuanCuoc></QuanCuoc>
           <img src="./img/bat.png" alt="" style={{
-            cursor:'pointer'
-          }}/>
+            cursor: 'pointer'
+          }} />
         </div>
       </div>
       <div className="col-3">
-        <h1>Lẻ</h1>
+        <button className='btn btn-dark' style={{
+          margin: 'auto',
+          margin: '50%'
+        }}>
+          <h1>Úp Bát</h1>
+        </button>
       </div>
     </div>
   )

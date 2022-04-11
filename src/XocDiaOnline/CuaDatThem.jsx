@@ -1,38 +1,76 @@
-import React from 'react'
+import React, { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+
+
 
 export default function CuaDatThem() {
+
+  let dispatch = useDispatch();
+  const [first, setfirst] = useState({
+    diemCuoc:''
+  })
+
+  const danhSachCuoc = useSelector(state => state.XocDiaReducers.mangChonVi)
+  const diemCuocXocDia = useSelector(state => state.XocDiaReducers.tongDiem)
+
+  // render Danh Sách Quân Vị
+  let renderDanhSachCuoc = danhSachCuoc.map((qc, index) => {
+    return <td scope="row text-center w-100" key={index}>
+      <img src={qc.hinhAnh} alt="" />
+      <h5>{qc.ten}</h5>
+    </td>
+  })
+
+  //HandleChange
+  let handleChange = (event) => {
+      let diemCuocXD = event.target.value
+    if (diemCuocXD <= diemCuocXocDia ) {
+      
+      setfirst({
+        diemCuoc: event.target.value
+      });
+    }else{
+      alert('Số nhập phải nhỏ hơn tổng điểm đang có !')
+    }
+  }
+
+  //HandleSubmit
+  let handleSubmit = (qc) => {
+    let diemCuoc = first.diemCuoc;
+    let submitQC = {...qc, diemCuoc}
+    
+    dispatch({
+      type: 'DAT_CUOC_XOC_DIA',
+      submitQC
+    })
+
+  }
+
+  //Render Điểm Cược
+  let renderDiemCuoc = danhSachCuoc.map((qc, index) => {
+    return <th key={index}>
+      <h2 style={{
+        fontSize: '35px'
+      }}>{qc.diemCuoc.toLocaleString()}</h2>
+        <input type="number" onChange={handleChange} placeholder='Nhập Tiền Vào Đây' />
+        <button className="btn btn-danger" onClick={() =>handleSubmit(qc)}>Xác Nhận</button>
+    </th>
+  })
+
+
   return (
     <div className='row text-center datCuaThem'>
       <div className="col-12">
-        <h1>Cửa Đặt Thêm</h1>
+        <h1 className='p-2'>CHỌN VỊ</h1>
         <table class="table text-white table-bordered">
           <thead>
             <tr>
-       
-                <td scope="row text-center w-100">
-                  <img src="./img/chan0.png" alt="" />
-                </td>
-                <td scope="row text-center w-100">
-                  <img src="./img/chan2.png" alt="" />
-                </td>
-                <td scope="row text-center w-100">
-                  <img src="./img/le3.png" alt="" />
-                </td>
-                <td scope="row text-center w-100">
-                  <img src="./img/le1.png" alt="" />
-                </td>
-                <td scope="row text-center w-100">
-                  <img src="./img/chan4.png" alt="" />
-                </td>
+              {renderDanhSachCuoc}
             </tr>
           </thead>
-          <tbody>
+          <tbody className='bg-dark'>
             <tr>
-              <th>Tiếng 1</th>
-              <th>Tiếng 2</th>
-              <th>Tiếng 3</th>
-              <th>Tiếng 4</th>
-              <th>Tiếng 5</th>
+              {renderDiemCuoc}
             </tr>
           </tbody>
         </table>
