@@ -10,7 +10,10 @@ body {
   color: aliceblue;
   -moz-transform: scale(0.8, 0.8); /* Moz-browsers */
   zoom: 0.8; /* Other non-webkit browsers */
-  zoom: 85%; /* Webkit browsers */
+  zoom: 80%; /* Webkit browsers */
+  width: auto;
+  margin: auto;
+  height: auto !important;
 }
 h1,h2,h3,h4,h5,h6,p{
   padding: 0;

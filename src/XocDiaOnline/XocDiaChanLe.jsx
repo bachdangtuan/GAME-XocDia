@@ -3,7 +3,7 @@ import QuanCuoc from './QuanCuoc'
 
 export default function XocDiaChanLe() {
   return (
-    <div className="row text-center">
+    <div className="row text-center container m-auto">
       <div className="col-3">
         <button className='btn btn-dark' style={{
           margin: 'auto',

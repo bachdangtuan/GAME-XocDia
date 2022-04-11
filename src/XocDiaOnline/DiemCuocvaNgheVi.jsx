@@ -10,9 +10,9 @@ export default function DiemCuocvaNgheVi() {
 
 
   return (
-    <div className='text-center'>
+    <div className='text-center container'>
       <br />
-      <h3 className='pb-3'>ĐIỂM: {renderTongDiem.toLocaleString()} VNĐ</h3>
+      <h3 className='pb-3'>ĐIỂM: {renderTongDiem.toLocaleString()} point</h3>
       <div className='row'>
         <div className="col-12 pb-3">
           <h1 className='text-center'>Bảng Kết Quả</h1>

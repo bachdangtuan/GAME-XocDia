@@ -32,7 +32,7 @@ export const XocDiaReducers = (state = initialState, action) => {
       if (indexQC !== -1) {
         if (state.tongDiem > 0) {
           state.tongDiem -= Number(action.submitQC.diemCuoc);
-          mangChonViUpdate[indexQC].diemCuoc = Number(action.submitQC.diemCuoc);
+          mangChonViUpdate[indexQC].diemCuoc += Number(action.submitQC.diemCuoc);
         }
         // if (action.tangGiam === false && action.qc.diemCuoc > 0) {
         //   state.tongDiem += 50000;

@@ -7,7 +7,7 @@ export default function CuaDatThem() {
 
   let dispatch = useDispatch();
   const [first, setfirst] = useState({
-    diemCuoc:''
+    diemCuoc: ''
   })
 
   const danhSachCuoc = useSelector(state => state.XocDiaReducers.mangChonVi)
@@ -23,22 +23,23 @@ export default function CuaDatThem() {
 
   //HandleChange
   let handleChange = (event) => {
-      let diemCuocXD = event.target.value
-    if (diemCuocXD <= diemCuocXocDia ) {
-      
+    let diemCuocXD = event.target.value
+    if (diemCuocXD <= diemCuocXocDia) {
+
       setfirst({
         diemCuoc: event.target.value
       });
-    }else{
-      alert('Số nhập phải nhỏ hơn tổng điểm đang có !')
+    } else {
+    alert('Số nhập phải nhỏ hơn tổng điểm đang có !')
+    
     }
   }
 
   //HandleSubmit
   let handleSubmit = (qc) => {
     let diemCuoc = first.diemCuoc;
-    let submitQC = {...qc, diemCuoc}
-    
+    let submitQC = { ...qc, diemCuoc }
+
     dispatch({
       type: 'DAT_CUOC_XOC_DIA',
       submitQC
@@ -51,29 +52,40 @@ export default function CuaDatThem() {
     return <th key={index}>
       <h2 style={{
         fontSize: '35px'
-      }}>{qc.diemCuoc.toLocaleString()}</h2>
-        <input type="number" onChange={handleChange} placeholder='Nhập Tiền Vào Đây' />
-        <button className="btn btn-danger" onClick={() =>handleSubmit(qc)}>Xác Nhận</button>
+      }}>{qc.diemCuoc.toLocaleString()} point</h2>
+      <input type="number" id='nhapDiem' onChange={handleChange} style={{
+        height:'3rem',
+        fontSize:'25px'
+      }} placeholder='Nhập Tiền Vào Đây' />
+      <button className="btn btn-danger" onClick={() => handleSubmit(qc)}>Xác Nhận</button>
     </th>
   })
 
 
   return (
-    <div className='row text-center datCuaThem'>
-      <div className="col-12">
-        <h1 className='p-2'>CHỌN VỊ</h1>
-        <table class="table text-white table-bordered">
-          <thead>
-            <tr>
-              {renderDanhSachCuoc}
-            </tr>
-          </thead>
-          <tbody className='bg-dark'>
-            <tr>
-              {renderDiemCuoc}
-            </tr>
-          </tbody>
-        </table>
+    <div className='text-center datCuaThem'>
+      <h1 className='p-2 '>CHỌN VỊ</h1>
+      <div className="row m-auto" style={{
+        zoom:'85%',
+        width:'80%',
+        paddingBottom:'150px'
+      }}>
+
+        <div className="col-12">
+          <table class="table text-white table-bordered">
+            <thead>
+              <tr>
+                {renderDanhSachCuoc}
+              </tr>
+            </thead>
+            <tbody className='bg-dark'>
+              <tr>
+                {renderDiemCuoc}
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
       </div>
     </div>
   )
