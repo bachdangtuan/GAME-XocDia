@@ -49,11 +49,11 @@ export default function CuaDatThem() {
 
   //Render Điểm Cược
   let renderDiemCuoc = danhSachCuoc.map((qc, index) => {
-    return <th key={index}>
+    return <th>
       <h2 style={{
         fontSize: '35px'
       }}>{qc.diemCuoc.toLocaleString()} point</h2>
-      <input type="number" id='nhapDiem' onChange={handleChange} style={{
+      <input type="number" id='nhapDiem' key={index} onChange={handleChange} style={{
         height:'3rem',
         fontSize:'25px'
       }} placeholder='Nhập Tiền Vào Đây' />
