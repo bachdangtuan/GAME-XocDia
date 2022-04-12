@@ -39,7 +39,7 @@ export default function CuaDatThem() {
   let handleSubmit = (qc) => {
     let diemCuoc = first.diemCuoc;
     let submitQC = { ...qc, diemCuoc }
-
+    document.getElementById("nhapDiem").value=''
     dispatch({
       type: 'DAT_CUOC_XOC_DIA',
       submitQC
