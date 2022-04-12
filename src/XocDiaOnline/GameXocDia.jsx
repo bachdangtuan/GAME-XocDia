@@ -1,6 +1,7 @@
 import React from 'react'
 import CuaDatThem from './CuaDatThem'
 import DiemCuocvaNgheVi from './DiemCuocvaNgheVi'
+import LuatChoi from './LuatChoi'
 import XocDiaChanLe from './XocDiaChanLe'
 
 export default function GameXocDia() {
@@ -13,7 +14,7 @@ export default function GameXocDia() {
       <DiemCuocvaNgheVi></DiemCuocvaNgheVi>
       <XocDiaChanLe></XocDiaChanLe>
       <CuaDatThem></CuaDatThem>
-
+      <LuatChoi></LuatChoi>
     </div>
 
 
