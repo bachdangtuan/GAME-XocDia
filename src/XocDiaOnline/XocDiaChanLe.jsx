@@ -1,13 +1,19 @@
 import React from 'react'
+import { useDispatch } from 'react-redux'
 import QuanCuoc from './QuanCuoc'
 
 export default function XocDiaChanLe() {
+  const dispatch = useDispatch();
   return (
     <div className="row text-center container m-auto">
       <div className="col-3">
         <button className='btn btn-dark' style={{
           margin: 'auto',
           margin: '50%'
+        }} onClick={() =>{
+          dispatch({
+            type: 'XOC_DIA'
+          })
         }}>
           <h1>Mở Bát</h1>
         </button>

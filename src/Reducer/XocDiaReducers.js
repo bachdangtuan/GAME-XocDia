@@ -27,7 +27,7 @@ export const XocDiaReducers = (state = initialState, action) => {
       let indexQC = mangChonViUpdate.findIndex(qc =>
         qc.ma === action.submitQC.ma
       )
-      console.log('indexQC',indexQC);
+      console.log('indexQC', indexQC);
       // console.log('indexQC', Number(action.submitQC.diemCuoc));
       if (indexQC !== -1) {
         if (state.tongDiem > 0) {
@@ -41,6 +41,41 @@ export const XocDiaReducers = (state = initialState, action) => {
         state.mangChonVi = mangChonViUpdate;
         return { ...state }
       }
+    }
+    case 'XOC_DIA': {
+      console.log('test', action);
+      const mangXocDiaNgauNhien = [];
+      let soNgauNhien = Math.floor(Math.random() * 5);
+      const XucXacNgauNhien = state.mangChonVi[soNgauNhien];
+
+      mangXocDiaNgauNhien.push(XucXacNgauNhien)
+
+      //Render lại màn hình
+      state.mangXocDia = mangXocDiaNgauNhien
+      console.log('mangXocDiaNgauNhien', mangXocDiaNgauNhien);
+
+      // Xử lý tính tiền cược
+      mangXocDiaNgauNhien.forEach((sp, index) => {
+        let indexXD = state.mangChonVi.findIndex(qc => qc.ma === sp.ma)
+
+        if (indexXD !== -1) {
+          state.tongDiem += state.mangChonVi[indexXD].diemCuoc
+        
+        }
+        // Xử lý hoàn tiền mỗi lượt chơi
+        state.mangChonVi.forEach((sp, index) => {
+          let indexXXNH = mangXocDiaNgauNhien.findIndex((xucxac, index2) => {
+            return xucxac.ma === sp.ma
+          })
+          if (indexXXNH !== -1) {
+            state.tongDiem += sp.diemCuoc
+          }
+        })
+        // Làm mới lượt đặt
+        state.mangChonVi = state.mangChonVi.map((sp2, index) => {
+          return { ...sp2, diemCuoc: 0 }
+        })
+      })
     }
     default:
       return { ...state }
