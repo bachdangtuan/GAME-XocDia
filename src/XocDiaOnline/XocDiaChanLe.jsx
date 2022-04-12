@@ -24,13 +24,15 @@ export default function XocDiaChanLe() {
             width: '65%'
           }} />
           <QuanCuoc></QuanCuoc>
-          <img src="./img/bat.png" alt="" style={{
+          <img src="./img/bat.png" className='image' id='bat' alt="" style={{
             cursor: 'pointer'
           }} />
         </div>
       </div>
       <div className="col-3">
-        <button className='btn btn-dark' style={{
+        <button className='btn btn-dark' onClick={()=>{
+          document.getElementById('bat').style.display = 'block';
+        }} style={{
           margin: 'auto',
           margin: '50%'
         }}>

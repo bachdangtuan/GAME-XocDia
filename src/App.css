@@ -1,27 +1,68 @@
 .batDia {
-    position: relative;
+  position: relative;
 }
 
 .batDia img:nth-child(3) {
-    width: 50%;
-    position: absolute;
-    top: 13%;
-    left: 60%;
+  width: 56%;
+  position: absolute;
+  top: 8%;
+  left: 22%;
+  display: none;
 }
 
 
 /* Quan Cược CSS */
 .quanCuoc img {
-    position: absolute;
-    top: 25%;
-    left: 34%;
-    width: 34%;
+  position: absolute;
+  top: 25%;
+  left: 34%;
+  width: 34%;
 }
+
 /* Nghe Vi */
-.ngheVi img{
-    width: 95%;
+.ngheVi img {
+  width: 95%;
 }
+
 /* Đặt Cửa Thêm */
-.datCuaThem img{
-    width: 40%;
+.datCuaThem img {
+  width: 40%;
+}
+
+
+
+
+.image {
+  display: block;
+  margin: 0 auto;
+}
+
+.image h3 {
+  margin: 50% auto;
+
+}
+
+.image:focus,
+.image:hover {
+  cursor: pointer;
+  animation: wobble 0.1s 14;
+}
+
+@keyframes wobble {
+  25% {
+    transform: rotate(15deg);
+  }
+
+  50% {
+    transform: rotate(-30deg);
+  }
+
+  75% {
+    transform: rotate(5deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+    transform: scale(1.1);
+  }
 }
