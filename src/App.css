@@ -66,3 +66,24 @@
     transform: scale(1.1);
   }
 }
+.hieuUngmoBat{
+  animation: diChuyen 3s 1;
+}
+@keyframes diChuyen {
+  25% {
+    transform: translate(15px,25px);
+  }
+
+  50% {
+    transform: rotate(-30deg);
+  }
+
+  75% {
+      transform: translate(-25px,-15px);
+  }
+
+  100% {
+    transform: rotate(0deg);
+    transform: scale(1.1);
+  }
+}
