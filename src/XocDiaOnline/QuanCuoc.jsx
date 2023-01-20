@@ -7,6 +7,7 @@ export default function QuanCuoc() {
 
   return (
     <div className='quanCuoc'>
+
         <img src={QuanCuocXocDia[0].hinhAnh} alt="chan2" />
     </div>
   )

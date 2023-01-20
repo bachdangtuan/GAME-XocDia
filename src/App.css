@@ -1,89 +1,110 @@
 .batDia {
-  position: relative;
+    position: relative;
 }
 
 .batDia img:nth-child(3) {
-  width: 56%;
-  position: absolute;
-  top: 8%;
-  left: 22%;
-  display: none;
+    width: 56%;
+    position: absolute;
+    top: 8%;
+    left: 22%;
+    display: none;
 }
 
 
 /* Quan Cược CSS */
 .quanCuoc img {
-  position: absolute;
-  top: 25%;
-  left: 34%;
-  width: 34%;
+    position: absolute;
+    top: 25%;
+    left: 34%;
+    width: 34%;
 }
 
 /* Nghe Vi */
 .ngheVi img {
-  width: 95%;
+    width: 95%;
 }
 
 /* Đặt Cửa Thêm */
 .datCuaThem img {
-  width: 40%;
+    width: 40%;
 }
 
+#toast-container {
+    margin-top: 1rem;
+}
 
+#toast-container.toast-top-full-width > .toast {
+    max-width: 600px;
+    height: 250px;
+}
+
+#toast-container > .toast-success {
+    background-color: #d3d7d1;
+    opacity: 1;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+#toast-container > .toast-success:hover {
+    background-color: #35c8c3;
+    opacity: 1;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+}
 
 
 .image {
-  display: block;
-  margin: 0 auto;
+    display: block;
+    margin: 0 auto;
 }
 
 .image h3 {
-  margin: 50% auto;
+    margin: 50% auto;
 
 }
 
 .image:focus,
 .image:hover {
-  cursor: pointer;
-  animation: wobble 0.1s 14;
+    cursor: pointer;
+    animation: wobble 0.1s 14;
 }
 
 @keyframes wobble {
-  25% {
-    transform: rotate(15deg);
-  }
+    25% {
+        transform: rotate(15deg);
+    }
 
-  50% {
-    transform: rotate(-30deg);
-  }
+    50% {
+        transform: rotate(-30deg);
+    }
 
-  75% {
-    transform: rotate(5deg);
-  }
+    75% {
+        transform: rotate(5deg);
+    }
 
-  100% {
-    transform: rotate(0deg);
-    transform: scale(1.1);
-  }
+    100% {
+        transform: rotate(0deg);
+        transform: scale(1.1);
+    }
 }
-.hieuUngmoBat{
-  animation: diChuyen 3s 1;
+
+.hieuUngmoBat {
+    animation: diChuyen 3s 1;
 }
+
 @keyframes diChuyen {
-  25% {
-    transform: translate(15px,25px);
-  }
+    25% {
+        transform: translate(15px, 25px);
+    }
 
-  50% {
-    transform: rotate(-30deg);
-  }
+    50% {
+        transform: rotate(-30deg);
+    }
 
-  75% {
-      transform: translate(-25px,-15px);
-  }
+    75% {
+        transform: translate(-25px, -15px);
+    }
 
-  100% {
-    transform: rotate(0deg);
-    transform: scale(1.1);
-  }
+    100% {
+        transform: rotate(0deg);
+        transform: scale(1.1);
+    }
 }

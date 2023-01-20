@@ -4,7 +4,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background: url(../public/img/chieu.jpg)  ;
-  background-size:cover;
+  background-size:contain;
   background-repeat: no-repeat;
   font-weight: bolder;
   color: aliceblue;
