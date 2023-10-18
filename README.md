@@ -1,9 +1,6 @@
 # Game Xóc Đĩa with Create React App
 Author: BachDangTuan
 ### Using: Reak Hook, Redux,Bootstrap, HTML
-### Mục đích làm
-Mục đích luyện Tổ Chức Redux, Xác định thành phần xử lý trong Redux, Thao Tác Với React Hook, tư duy logic.
-Không phải làm để mục đích cờ bạc
 ### Dàn layout như hình
 ![alt](https://i.ibb.co/grzNgJk/layout.png)
 
